@@ -1,4 +1,6 @@
-sklearn
+# scikit-learn # was sklearn before
+matplotlib==3.0.3 # added afterwards
+scikit-learn==0.22.2.post1 # was sklearn before
 absl-py==0.2.2
 setuptools==39.1.0
 astor==0.7.1

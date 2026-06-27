@@ -2,4 +2,26 @@ __pycache__/
 *.py[cod]
 *$py.class
 .venv
+.python-version
+.vscode/
+# model/
+tmp/*
+!tmp/former_lsa/
+# logs/
 
+# latex-based
+*.aux
+*.bbl
+*SAVE-ERROR
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xcp
+*.nav
+*.snm

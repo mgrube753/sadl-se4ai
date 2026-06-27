@@ -9,6 +9,10 @@ from keras.utils import np_utils
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten, Conv2D, MaxPooling2D
 from keras.regularizers import l2
+#### change start ------------------------------------------------------------
+from keras.callbacks import TensorBoard
+import datetime
+#### change end --------------------------------------------------------------
 
 CLIP_MIN = -0.5
 CLIP_MAX = 0.5
@@ -81,14 +85,24 @@ def train(args):
         loss="categorical_crossentropy", optimizer="adadelta", metrics=["accuracy"]
     )
 
+    #### change start -----------------------------------------------------------
+    log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    tensorboard_cb = TensorBoard(log_dir=log_dir, histogram_freq=1)
+    #### change end -------------------------------------------------------------
+
     model.fit(
         x_train,
         y_train,
-        epochs=50,
+        #### change start -----------------------------------------------------------
+        epochs=3, # was 50
+        #### change end -------------------------------------------------------------
         batch_size=128,
         shuffle=True,
         verbose=1,
         validation_data=(x_test, y_test),
+        #### change start -----------------------------------------------------------
+        callbacks=[tensorboard_cb],
+        #### change end -------------------------------------------------------------
     )
 
     model.save("./model/model_{}.h5".format(args.d))
