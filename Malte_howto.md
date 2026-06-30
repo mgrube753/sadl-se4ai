@@ -38,3 +38,5 @@ The presentation for the project is stored in [`pres/`](pres/), and the report i
 ## AI Usage Disclaimer
 
 According to the [`Selbstständigkeitserklärung.pdf`](Selbstständigkeitserklärung.pdf), the AI-based conversations for the project are included, see [`prompt_conv1.md`](prompt_conv1.md) and [`prompt_conv2.md`](prompt_conv2.md).
+
+All changes done after the AI-based conversations are done by me, and I am responsible for the content of the repository. The diffs based on the conversations are [in this commit](https://github.com/mgrube753/sadl-se4ai/commit/ac2e1851b18af5769ec9c7545f08aeabd6d16992).
