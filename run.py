@@ -291,25 +291,25 @@ if __name__ == "__main__":
             )
             writer_target.add_summary(mean_class_target, 0)
 
-            auc_summary = tf.Summary(
-                value=[tf.Summary.Value(tag="Metrics/ROC-AUC", simple_value=auc * 100)]
-            )
-            writer_test.add_summary(auc_summary, 0)
+        auc_summary = tf.Summary(
+            value=[tf.Summary.Value(tag="Metrics/ROC-AUC", simple_value=auc * 100)]
+        )
+        writer_test.add_summary(auc_summary, 0)
 
-            test_cov_summary = tf.Summary(
-                value=[tf.Summary.Value(tag="Coverage", simple_value=test_cov)]
-            )
-            writer_test.add_summary(test_cov_summary, 0)
+        test_cov_summary = tf.Summary(
+            value=[tf.Summary.Value(tag="Coverage", simple_value=test_cov)]
+        )
+        writer_test.add_summary(test_cov_summary, 0)
 
-            target_cov_summary = tf.Summary(
-                value=[tf.Summary.Value(tag="Coverage", simple_value=target_cov)]
-            )
-            writer_target.add_summary(target_cov_summary, 0)
+        target_cov_summary = tf.Summary(
+            value=[tf.Summary.Value(tag="Coverage", simple_value=target_cov)]
+        )
+        writer_target.add_summary(target_cov_summary, 0)
 
-            combined_cov_summary = tf.Summary(
-                value=[tf.Summary.Value(tag="Coverage", simple_value=combined_cov)]
-            )
-            writer_test.add_summary(combined_cov_summary, 0)
+        combined_cov_summary = tf.Summary(
+            value=[tf.Summary.Value(tag="Coverage", simple_value=combined_cov)]
+        )
+        writer_test.add_summary(combined_cov_summary, 0)
 
         writer_test.flush()
         writer_target.flush()
